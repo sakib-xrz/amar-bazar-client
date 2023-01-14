@@ -7,7 +7,9 @@ const Main = () => {
   return (
     <div>
       <Navbar />
-      <Outlet />
+      <div className="mt-[4.5rem]">
+        <Outlet />
+      </div>
       <Footer />
     </div>
   );

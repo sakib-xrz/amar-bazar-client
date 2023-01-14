@@ -16,24 +16,31 @@ const Navbar = () => {
   ];
   return (
     <div className="shadow-md w-full fixed top-0 z-10">
-      <div className="md:flex items-center justify-between bg-white py-4 md:px-10 px-7">
-        <div>
+      <div className="flex items-center justify-between bg-white py-4 md:px-10 px-7">
+        <Link to={"/"}>
           <img className="w-32 h-auto" src={logo} alt="" />
-        </div>
-
-        <div
-          onClick={() => setIsOpen(!isOpen)}
-          className="text-3xl absolute right-8 top-6 cursor-pointer md:hidden"
-        >
-          {isOpen ? (
-            <CgClose className="text-primary" />
-          ) : (
-            <VscThreeBars className="text-primary" />
-          )}
+        </Link>
+        <div className="flex items-center">
+          <div className="relative mr-14 md:hidden">
+            <small className="absolute top-[-10px] right-[-10px] bg-primary text-white rounded-full text-xs p-1 pl-[5px] w-5 h-5 flex justify-center items-center">
+              0
+            </small>
+            <AiOutlineShoppingCart className="text-2xl font-medium" />
+          </div>
+          <div
+            onClick={() => setIsOpen(!isOpen)}
+            className="text-3xl absolute right-8 top-6 cursor-pointer md:hidden"
+          >
+            {isOpen ? (
+              <CgClose className="text-primary" />
+            ) : (
+              <VscThreeBars className="text-primary" />
+            )}
+          </div>
         </div>
 
         <ul
-          className={`text-center md:pb-0 pb-12 absolute md:static bg-white md:z-auto z-[-1] left-0 w-full md:w-auto transition-all duration-500 ease-in ${
+          className={`w-full text-center md:pb-0 pb-12 absolute md:static bg-white md:z-auto z-[-1] left-0 w-full md:w-auto transition-all duration-500 ease-in ${
             isOpen ? "top-20 " : "top-[-490px]"
           } ${
             isOpen && "h-screen flex items-center justify-center mt-[-5rem]"
@@ -44,14 +51,17 @@ const Navbar = () => {
               <li key={menu.name} className="text-xl md:my-0 my-7">
                 <Link
                   to={menu.link}
-                  className="text-dark hover:text-primary duration-500"
+                  onClick={() => setIsOpen(false)}
+                  className="text-dark hover:text-primary font-medium duration-500"
                 >
                   {menu.name}
                 </Link>
               </li>
             ))}
-            <button className="flex justify-center mx-auto relative">
-              <small className="absolute top-[-10px] right-[-10px] bg-primary text-white rounded-full text-xs p-1 pl-[5px] w-5 h-5 flex justify-center items-center">0</small>
+            <button className="relative hidden md:block">
+              <small className="absolute top-[-10px] right-[-10px] bg-primary text-white rounded-full text-xs p-1 pl-[5px] w-5 h-5 flex justify-center items-center">
+                0
+              </small>
               <AiOutlineShoppingCart className="text-2xl font-medium" />
             </button>
             <ButtonPrimary>Log In</ButtonPrimary>
