@@ -5,7 +5,7 @@ import Navbar from "../components/Navbar/Navbar";
 
 const Main = () => {
   return (
-    <div>
+    <div className="bg-base">
       <Navbar />
       <div className="mt-[4.5rem]">
         <Outlet />

@@ -1,5 +1,4 @@
 import React from "react";
-import Heading from "../Heading/Heading";
 
 const Category = () => {
   const categories = [
@@ -29,14 +28,13 @@ const Category = () => {
     },
   ];
   return (
-    <div className="container mx-auto px-5 space-y-5">
-      <Heading>Categories</Heading>
+    <div className="container mx-auto p-5 space-y-5">
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-5 md:gap-10">
-        {categories.map((category) => (
-          <div className="flex flex-col justify-center items-center p-4 shadow-md rounded-md border border-white hover:border-primary hover:cursor-pointer">
+        {categories.map((category,i) => (
+          <div key={i} className="bg-white flex flex-col justify-center items-center p-4 shadow-md rounded-md border border-white hover:border-primary hover:cursor-pointer transition-all duration-500">
             <>
               <img src={category.img} alt="" />
-              <h5>{category.name}</h5>
+              <h5 className="font-medium">{category.name}</h5>
             </>
           </div>
         ))}
