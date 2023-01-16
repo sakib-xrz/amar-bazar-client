@@ -30,7 +30,7 @@ const Banner = () => {
         }}
         navigation={true}
         modules={[Autoplay, Parallax, Pagination, Navigation]}
-        className="mySwiper"
+        className="mySwiperBanner"
       >
         <SwiperSlide>
           <div className="flex flex-col justify-center lg:h-[calc(100vh-8rem)] space-y-5">

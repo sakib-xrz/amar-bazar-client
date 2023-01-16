@@ -1,0 +1,9 @@
+.myProduct .swiper-slide {
+  font-size: unset;
+  color: unset;
+  padding: unset;
+}
+
+.myProduct .swiper-pagination-bullet{
+    display: none;
+}
