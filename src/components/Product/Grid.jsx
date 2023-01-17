@@ -6,7 +6,7 @@ import Stars from "../Star/Stars";
 
 const Grid = ({ img, name, price, rating, reviews }) => {
   return (
-    <div className="col-span-12 md:col-span-6 lg:col-span-3 mx-auto max-w-xs w-full mb-10 md:mb-0 sm:w-full lg:w-full">
+    <div className="col-span-6 md:col-span-3 mx-auto max-w-xs w-full sm:w-full lg:w-full">
       <div className="relative bg-white shadow-md rounded-md overflow-hidden hover:cursor-pointer">
         <div className="overflow-hidden">
           <img
@@ -23,11 +23,10 @@ const Grid = ({ img, name, price, rating, reviews }) => {
             {name}
           </p>
           <p className="text-3xl text-dark">${price}</p>
-          {/* <p className="text-dark">742 Evergreen Terrace</p> */}
           <Stars rating={rating} reviews={reviews} />
         </div>
         <hr className="w-11/12 mx-auto text-gray" />
-        <div className="flex justify-between p-4">
+        <div className="flex justify-center xl:justify-between p-4">
           <div>
             <button className="flex items-center text-dark hover:text-primary font-medium">
               {" "}
@@ -35,7 +34,7 @@ const Grid = ({ img, name, price, rating, reviews }) => {
               <small>ADD TO CART</small>
             </button>
           </div>
-          <div>
+          <div className="hidden xl:block">
             <button className="flex items-center text-dark hover:text-primary font-medium">
               {" "}
               <AiOutlineEye className="mr-2 font-bold" />{" "}

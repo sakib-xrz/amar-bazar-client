@@ -100,7 +100,7 @@ const Trending = () => {
                   <Stars rating={product.rating} reviews={product.reviews} />
                 </div>
                 <hr className="w-11/12 mx-auto text-gray" />
-                <div className="flex justify-center lg:justify-between p-4">
+                <div className="flex justify-center xl:justify-between p-4">
                   <div>
                     <button className="flex items-center text-dark hover:text-primary font-medium">
                       {" "}
@@ -108,7 +108,7 @@ const Trending = () => {
                       <small>ADD TO CART</small>
                     </button>
                   </div>
-                  <div className="hidden lg:block">
+                  <div className="hidden xl:block">
                     <button className="flex items-center text-dark hover:text-primary font-medium">
                       {" "}
                       <AiOutlineEye className="mr-2 font-bold" />{" "}
